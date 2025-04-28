@@ -9,9 +9,8 @@ app: Flask = Flask(__name__)
 def index():
     return render_template('index.html')  # Agora Flask vai procurar em templates/index.html
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
 def get_connection():
     # Conectar ao banco de dados SQLite

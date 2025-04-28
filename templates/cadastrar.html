@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastrar Veículo{% endblock %}
+
+{% block content %}
+<h1>Cadastrar Novo Veículo</h1>
+
+<form action="/veiculos/cadastrar" method="post">
+    <div class="mb-3">
+        <label class="form-label">Modelo</label>
+        <input type="text" name="modelo" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Marca</label>
+        <input type="text" name="marca" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ano</label>
+        <input type="number" name="ano" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Placa</label>
+        <input type="text" name="placa" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+</form>
+
+{% if mensagem %}
+<div class="alert alert-success mt-3">
+    {{ mensagem }}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Veículo{% endblock %}
+
+{% block content %}
+<h1>Editar Veículo</h1>
+
+<form action="/veiculos/editar/{{ veiculo['idveiculo'] }}" method="post">
+    <div class="mb-3">
+        <label class="form-label">Modelo</label>
+        <input type="text" name="modelo" value="{{ veiculo['modelo'] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Marca</label>
+        <input type="text" name="marca" value="{{ veiculo['marca'] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ano</label>
+        <input type="number" name="ano" value="{{ veiculo['ano'] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Placa</label>
+        <input type="text" name="placa" value="{{ veiculo['placa'] }}" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+</form>
+{% endblock %}

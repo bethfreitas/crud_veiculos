@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Listar Veículos{% endblock %}
+
+{% block content %}
+<h1>Veículos Cadastrados</h1>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for veiculo in regs %}
+        <tr>
+            <td>{{ veiculo['idveiculo'] }}</td>
+            <td>{{ veiculo['modelo'] }}</td>
+            <td>{{ veiculo['marca'] }}</td>
+            <td>{{ veiculo['ano'] }}</td>
+            <td>{{ veiculo['placa'] }}</td>
+            <td>
+                <a href="/veiculos/editar/{{ veiculo['idveiculo'] }}" class="btn btn-sm btn-primary">Editar</a>
+                <a href="/veiculos/deletar/{{ veiculo['idveiculo'] }}" class="btn btn-sm btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

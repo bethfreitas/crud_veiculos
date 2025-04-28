@@ -1,33 +1,32 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Veículo</title>
+</head>
+<body>
+    <h1>Cadastrar Novo Veículo</h1>
+    <form method="POST">
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required><br><br>
 
-{% block title %}Cadastrar Veículo{% endblock %}
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required><br><br>
 
-{% block content %}
-<h1>Cadastrar Novo Veículo</h1>
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" name="ano" required><br><br>
 
-<form action="/veiculos/cadastrar" method="post">
-    <div class="mb-3">
-        <label class="form-label">Modelo</label>
-        <input type="text" name="modelo" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Marca</label>
-        <input type="text" name="marca" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Ano</label>
-        <input type="number" name="ano" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Placa</label>
-        <input type="text" name="placa" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-success">Cadastrar</button>
-</form>
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" required><br><br>
 
-{% if mensagem %}
-<div class="alert alert-success mt-3">
-    {{ mensagem }}
-</div>
-{% endif %}
-{% endblock %}
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    {% if mensagem %}
+    <p>{{ mensagem }}</p>
+    {% endif %}
+
+    <a href="/">Voltar para a página inicial</a>
+</body>
+</html>

@@ -1,15 +1,17 @@
-{% extends "base.html" %}
-
-{% block title %}Excluir Veículo{% endblock %}
-
-{% block content %}
-<h1>Confirmar Exclusão</h1>
-
-<div class="alert alert-warning">
-    <h4>Tem certeza que deseja excluir o veículo "{{ veiculo['modelo'] }} - {{ veiculo['placa'] }}"?</h4>
-    <form action="/veiculos/deletar/{{ veiculo['idveiculo'] }}" method="post" class="mt-3">
-        <button type="submit" class="btn btn-danger">Excluir</button>
-        <a href="/veiculos/listar" class="btn btn-secondary">Cancelar</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Veículo</title>
+</head>
+<body>
+    <h1>Confirmar Exclusão</h1>
+    <p>Tem certeza que deseja excluir o veículo: {{ veiculo['modelo'] }}?</p>
+    <form method="POST">
+        <button type="submit">Excluir</button>
     </form>
-</div>
-{% endblock %}
+
+    <a href="/">Voltar para a página inicial</a>
+</body>
+</html>
